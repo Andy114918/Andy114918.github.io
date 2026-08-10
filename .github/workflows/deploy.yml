@@ -38,7 +38,13 @@ jobs:
       - name: Build
         run: npm run build
 
+      # enablement: true makes this step create the Pages site if it does not
+      # already exist. Selecting "GitHub Actions" as the source in Settings
+      # saves the preference but does not always provision the site, which
+      # leaves the first run failing with "Get Pages site failed / Not Found".
       - uses: actions/configure-pages@v5
+        with:
+          enablement: true
 
       - uses: actions/upload-pages-artifact@v3
         with:
