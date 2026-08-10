@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+
+    <title>Anirudh Edupuganti — AI &amp; Data Platform Engineer</title>
+    <meta
+      name="description"
+      content="AI and data platform engineer. Four years of production data systems across AWS, Azure and GCP, plus RAG, MCP and multi-agent systems. Patent holder, published researcher, PhD candidate."
+    />
+    <link rel="canonical" href="https://andy114918.github.io/" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://andy114918.github.io/" />
+    <meta property="og:title" content="Anirudh Edupuganti — AI &amp; Data Platform Engineer" />
+    <meta
+      property="og:description"
+      content="Production data platforms across three clouds. RAG, MCP and multi-agent systems with real evaluation loops. Two patents, a field-deployed IoT–AI system, and national press."
+    />
+    <meta property="og:image" content="https://andy114918.github.io/og-image.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!--
+      Set the theme before first paint. Without this the page renders light and
+      then snaps to dark, which is the single most visible polish failure on a
+      dark-first site.
+    -->
+    <script>
+      ;(function () {
+        try {
+          var stored = localStorage.getItem('portfolio:theme')
+          var dark =
+            stored === 'dark' ||
+            (stored !== 'light' && !window.matchMedia('(prefers-color-scheme: light)').matches)
+          if (dark) document.documentElement.classList.add('dark')
+          document.documentElement.style.colorScheme = dark ? 'dark' : 'light'
+        } catch (e) {
+          document.documentElement.classList.add('dark')
+        }
+      })()
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Anirudh Edupuganti",
+        "jobTitle": "AI / Data Platform Engineer",
+        "email": "mailto:anirudh1.edupuganti@gmail.com",
+        "url": "https://andy114918.github.io/",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Chicago",
+          "addressRegion": "IL",
+          "addressCountry": "US"
+        },
+        "alumniOf": [
+          { "@type": "CollegeOrUniversity", "name": "DePaul University" },
+          { "@type": "CollegeOrUniversity", "name": "Andhra University" }
+        ],
+        "knowsAbout": [
+          "Data Engineering",
+          "Artificial Intelligence",
+          "Generative AI",
+          "Retrieval-Augmented Generation",
+          "Model Context Protocol",
+          "Multi-agent systems",
+          "Apache Spark",
+          "Snowflake",
+          "Terraform",
+          "LLM evaluation"
+        ],
+        "sameAs": ["https://www.linkedin.com/in/anirudh-edupuganti-3a7a7827b/"]
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

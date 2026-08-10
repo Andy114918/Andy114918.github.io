@@ -1,0 +1,73 @@
+# ---------------------------------------------------------------------------
+# SAFETY FIRST — personal / immigration / financial documents must never ship.
+#
+# The source material for this site lives alongside passport scans, visas,
+# I-94s, the full H-1B petition, LCA paperwork, a marriage certificate,
+# spouse pay stubs, and academic transcripts. Only an explicit allowlist of
+# assets is ever copied into public/media. These patterns are a second line of
+# defence so that an accidental copy still cannot be committed.
+# Do not relax these.
+# ---------------------------------------------------------------------------
+Passport/
+H1-B/
+h1-b/
+Education/
+*visa*
+*Visa*
+*VISA*
+*passport*
+*Passport*
+*I-94*
+*i-94*
+*I-797*
+*LCA*
+*lca*
+*transcript*
+*Transcript*
+*marksheet*
+*Marksheet*
+*mark sheet*
+*pay stub*
+*paystub*
+*Pay Date*
+*marriage*
+*Marriage*
+*petition*
+*Beneficiary*
+*.docx
+
+# Allow the one PDF we intentionally publish
+!public/resume.pdf
+
+# ---------------------------------------------------------------------------
+# Standard
+# ---------------------------------------------------------------------------
+node_modules/
+dist/
+dist-ssr/
+coverage/
+*.local
+.env
+.env.*
+!.env.example
+
+# Editor / OS
+.vscode/*
+!.vscode/extensions.json
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*

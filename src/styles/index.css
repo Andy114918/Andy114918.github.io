@@ -1,0 +1,133 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+ * One source of truth for colour. Components reference semantic Tailwind
+ * classes (bg-surface, text-muted, border-line) which resolve to these
+ * variables, so light and dark stay in step by construction.
+ *
+ * Contrast was checked against WCAG AA for body text in both themes.
+ */
+@layer base {
+  :root {
+    --bg: 252 252 253;
+    --surface: 255 255 255;
+    --raised: 247 248 250;
+    --line: 224 228 235;
+    --fg: 17 22 31;
+    --muted: 88 97 113;
+    --faint: 130 140 156;
+    --accent: 29 78 216;
+    --accent-fg: 255 255 255;
+  }
+
+  .dark {
+    --bg: 8 10 14;
+    --surface: 14 17 23;
+    --raised: 21 25 33;
+    --line: 38 44 56;
+    --fg: 233 237 243;
+    --muted: 148 158 175;
+    --faint: 100 110 128;
+    --accent: 96 165 250;
+    --accent-fg: 8 10 14;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    /* Sticky header is 4rem; without this an anchor jump hides the heading. */
+    scroll-padding-top: 5rem;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-bg text-fg font-sans antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  :focus-visible {
+    @apply outline-none ring-2 ring-accent ring-offset-2;
+    --tw-ring-offset-color: rgb(var(--bg));
+  }
+
+  ::selection {
+    background: rgb(var(--accent) / 0.25);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+/*
+ * Chart tokens, scoped to .viz-root.
+ *
+ * Categorical slots 1–4 are the validated default order (blue, orange, aqua,
+ * yellow), re-verified with scripts/validate_palette.js against THIS site's
+ * card surfaces (#ffffff light, #0e1117 dark) rather than the reference ones:
+ *   light — all checks pass; contrast WARN on aqua (2.82) and yellow (2.17)
+ *   dark  — all checks pass, all four >= 3:1
+ * The light-mode WARN is why the multi-series chart ships direct labels AND a
+ * table view: the relief rule is an obligation, not a suggestion.
+ */
+@layer base {
+  .viz-root {
+    --series-1: #2a78d6;
+    --series-2: #eb6834;
+    --series-3: #1baf7a;
+    --series-4: #eda100;
+    --viz-grid: #e1e0d9;
+    --viz-axis: #c3c2b7;
+    --viz-flat: #94a3b8;
+  }
+
+  .dark .viz-root {
+    --series-1: #3987e5;
+    --series-2: #d95926;
+    --series-3: #199e70;
+    --series-4: #c98500;
+    --viz-grid: #2c2c2a;
+    --viz-axis: #383835;
+    --viz-flat: #4b5563;
+  }
+}
+
+@layer components {
+  .shell {
+    @apply mx-auto w-full max-w-content px-5 sm:px-8;
+  }
+
+  /* Small uppercase label used above every section heading. */
+  .eyebrow {
+    @apply font-mono text-[0.7rem] uppercase tracking-[0.18em] text-faint;
+  }
+
+  .card {
+    @apply rounded-xl border border-line bg-surface;
+  }
+
+  .chip {
+    @apply inline-flex items-center rounded-md border border-line bg-raised px-2 py-1
+           font-mono text-[0.7rem] text-muted;
+  }
+
+  .link-underline {
+    @apply underline decoration-line underline-offset-4 transition-colors hover:decoration-accent;
+  }
+
+  /* Skip link — visually hidden until focused. */
+  .skip-link {
+    @apply absolute left-4 top-4 z-[100] -translate-y-24 rounded-md bg-accent px-4 py-2
+           text-sm font-medium text-accent-fg transition-transform focus:translate-y-0;
+  }
+}

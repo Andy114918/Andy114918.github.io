@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Anirudh Edupuganti</title>
+    <script>
+      // GitHub Pages has no server-side rewrite, so a hard load of /case/agriai
+      // returns this page. Stash the requested path and hand control back to the
+      // SPA at the root, which reads it and restores the route (see main.tsx).
+      // Without this, every deep link and every refresh on a sub-route 404s.
+      sessionStorage.setItem(
+        'spa:redirect',
+        window.location.pathname + window.location.search + window.location.hash
+      )
+      window.location.replace('/')
+    </script>
+  </head>
+  <body>
+    <p>Redirecting&hellip;</p>
+  </body>
+</html>
