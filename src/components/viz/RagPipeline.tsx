@@ -171,7 +171,9 @@ export function RagPipeline() {
                 tabIndex={0}
                 role="button"
                 aria-pressed={isActive}
-                aria-label={`${n.label} — ${n.sub}`}
+                /* No aria-label: the <text> children below already name the
+                   node, and an aria-label that does not contain the visible
+                   text breaks voice control (it speaks what it sees). */
                 className="cursor-pointer"
               >
                 <rect

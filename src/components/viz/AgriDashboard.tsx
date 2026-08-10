@@ -108,7 +108,7 @@ export function AgriDashboard() {
         {/* Single measure across five stages: magnitude comparison, so one hue. */}
         <figure className="card p-5">
           <figcaption>
-            <h4 className="text-sm font-semibold tracking-tight">System reliability</h4>
+            <h3 className="text-sm font-semibold tracking-tight">System reliability</h3>
             <p className="mt-1 text-xs text-muted">
               Field-measured rates. The dashed line marks the {PERFORMANCE_THRESHOLD}% design
               threshold.
@@ -152,7 +152,7 @@ export function AgriDashboard() {
             carries the accent and the rest recede to gray. */}
         <figure className="card p-5">
           <figcaption>
-            <h4 className="text-sm font-semibold tracking-tight">Where the latency goes</h4>
+            <h3 className="text-sm font-semibold tracking-tight">Where the latency goes</h3>
             <p className="mt-1 text-xs text-muted">
               Detection-to-control breakdown. The LLM decision is the single largest contributor —
               the cost of an adaptable control policy.
@@ -197,9 +197,9 @@ export function AgriDashboard() {
       <figure className="card p-5">
         <figcaption className="flex flex-wrap items-start justify-between gap-3">
           <div>
-            <h4 className="text-sm font-semibold tracking-tight">
+            <h3 className="text-sm font-semibold tracking-tight">
               Pest population reduction over 12 weeks
-            </h4>
+            </h3>
             <p className="mt-1 text-xs text-muted">
               Four target rice pests. Steepest decline in the first four weeks, then sustained.
             </p>

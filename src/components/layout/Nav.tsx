@@ -50,7 +50,10 @@ export function Nav({ theme, onToggleTheme, onOpenPalette }: NavProps) {
           <button
             type="button"
             onClick={onOpenPalette}
-            aria-label="Open command palette"
+            /* No aria-label: the visible "Search" text is the accessible name.
+               An aria-label that does not contain the visible text breaks
+               voice control, which types what it sees. */
+            title="Search (Ctrl+K)"
             className="hidden items-center gap-2 rounded-lg border border-line bg-raised px-2.5 py-2
                        text-xs text-faint transition-colors hover:text-fg md:flex"
           >
