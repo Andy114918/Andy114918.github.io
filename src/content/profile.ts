@@ -4,7 +4,7 @@ export const profile = {
   name: 'Anirudh Edupuganti',
   location: 'Chicago, IL',
   email: 'anirudh1.edupuganti@gmail.com',
-  phone: '+1 331-529-2790',
+  phone: '+1 331-529-2780',
   linkedin: 'https://www.linkedin.com/in/anirudh-edupuganti-3a7a7827b/',
   siteUrl: 'https://andy114918.github.io',
   resumePath: '/resume.pdf',
